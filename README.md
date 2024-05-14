@@ -29,3 +29,7 @@ Do operations on objects (count, compute stats, etc…)
 Update attributes of an object
 Destroy an object
 
+contributors
+
+Lynton Makena <makenalynton@gmail.com>
+Hinga Makena <hingamakena@gmail.com>
