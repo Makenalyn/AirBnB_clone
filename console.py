@@ -8,7 +8,7 @@ hbnb class importing the public Cmd class
 """
 
 
-class hbnb(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     def do_EOF(self, line):
         return True
 
@@ -17,4 +17,4 @@ class hbnb(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    hbnb().cmdloop()
+    HBNBCommand().cmdloop()
