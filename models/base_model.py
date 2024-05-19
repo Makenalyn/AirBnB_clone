@@ -20,9 +20,11 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         pass
 
+    def __str__(self):
+        print ("{} {} {}".format(self.__class__.__name__, self.id, self.__dict__))
+
     def save(self):
-        """updates public instance created_at with current date"""
-    pass
+        self.id = datetime.current()
 
     def to_dict(self):
-        return self.__class__.__dict__
+        return dir(self)
