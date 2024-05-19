@@ -21,10 +21,10 @@ class BaseModel:
         pass
 
     def __str__(self):
-        print ("{} {} {}".format(self.__class__.__name__, self.id, self.__dict__))
+        return ("{} {} {}".format(self.__class__.__name__, self.id, self.__dict__))
 
     def save(self):
-        self.id = datetime.current()
+        self.updated_at = datetime.now()
 
     def to_dict(self):
-        return dir(self)
+        return self.__dict__.copy
