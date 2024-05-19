@@ -9,6 +9,8 @@ hbnb class importing the public Cmd class
 
 
 class HBNBCommand(cmd.Cmd):
+    prompt = '(hbnb) '
+
     def do_EOF(self, line):
         return True
 
