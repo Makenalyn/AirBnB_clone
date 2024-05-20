@@ -9,12 +9,9 @@ class model defining all common attributes/methods for other classes
 
 class BaseModel:
 
-    datetime_now = datetime.now()
-
     def __init__(self):
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
-        """self.updated is liable to update when object is changed"""
         self.updated_at = datetime.now()
 
     def __str__(self):
