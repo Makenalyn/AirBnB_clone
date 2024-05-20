@@ -10,6 +10,7 @@ class model defining all common attributes/methods for other classes
 class BaseModel:
 
     datetime_now = datetime.now()
+    id = 0
 
     def __self__(self, id):
         self.id = uuid.uuid4()
