@@ -21,10 +21,12 @@ class BaseModel:
         pass
 
     def __str__(self):
-        return ("{} {} {}".format(self.__class__.__name__, self.id, self.__dict__))
+        return "{} {} {}".format(self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        return self.__dict__.copy
+        return dir(self.__class__)
+        created_at =  datetime.isoformat()
+        updated_at = datetime.isoformat()
