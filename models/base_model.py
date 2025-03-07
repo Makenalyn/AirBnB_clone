@@ -9,7 +9,7 @@ class BaseModel:
     updated_at = datetime.now()
 
     def __str__(self):
-        print("{}".format(BaseModel.__name__))
+        print("{} {} {}".format(BaseModel.__name__ , self.id , self.__dict__))
 
     def save(self):
         updated_at = datetime.now()
