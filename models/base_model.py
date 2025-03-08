@@ -4,6 +4,14 @@ import time
 from datetime import datetime
 
 class BaseModel:
+
+
+    def __init__(self, *args, **kwargs):
+        if kwargs is not None:
+            for key, value in kwargs.items():
+                print("{} {}".format(key, value))
+
+
     id = str(uuid.uuid4())
     created_at = datetime.now()
     updated_at = datetime.now()
@@ -16,7 +24,7 @@ class BaseModel:
 
 
     def to_dict(self):
-        return self.__dict__
+        return self.__class__.__dict__
 
 if __name__ == "__main__":
     a = BaseModel()
