@@ -21,4 +21,9 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
+        self.created_at = self.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
         return f"{self.__class__.__dict__}"
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
