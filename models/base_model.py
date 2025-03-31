@@ -21,9 +21,14 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        return self.__dict__
-"""
+        self.created_at = self.created_at.isoformat()
+        self.updated_at = self.updated_at.isoformat()
+
+        for v in self.__dict__.keys():
+            print(v)
+
+        return self.__class__.__dict__
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-    """
