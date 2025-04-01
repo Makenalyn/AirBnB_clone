@@ -23,6 +23,12 @@ class BaseModel:
     def to_dict(self):
         dict_repr = self.__dict__.copy()
 
+        dict_repr['__class__'] = self.__class__.__name__
+        dict_repr['created_at'] = self.created_at.isoformat()
+        dict_repr['updated_at'] = self.updated_at.isoformat()
+
+        return dict_repr
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
