@@ -21,7 +21,7 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        return BaseModel.__class__.__dict__
+        dict_repr = self.__dict__.copy()
 
 if __name__ == "__main__":
     import doctest
