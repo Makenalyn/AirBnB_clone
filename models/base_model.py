@@ -30,5 +30,5 @@ class BaseModel:
         return dict_repr
 
 if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+    a = BaseModel()
+    print(a.save())
