@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import uuid
+import datetime
 from datetime import datetime
 
 """ A baseModel class which is the base of all other classes"""
@@ -31,4 +32,8 @@ class BaseModel:
 
 if __name__ == "__main__":
     a = BaseModel()
-    print(a.save())
+    a.name = "My first model"
+    a.num = 89
+    print(a)
+    a.save()
+    print(a)
