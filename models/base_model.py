@@ -15,11 +15,9 @@ class BaseModel:
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
-        mydict = self.__dict__.copy()
         if kwargs:
-            for i, j in mydict.items():
-                print(i, j)
-
+            for key, value in kwargs.items():
+                key['created_at'] = self.created_at
     def __str__(self):
 
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
@@ -37,12 +35,3 @@ class BaseModel:
         dict_repr['updated_at'] = self.updated_at.isoformat()
 
         return dict_repr
-
-
-if __name__ == "__main__":
-    a = BaseModel()
-    a.name = "My first model"
-    a.num = 89
-    print(a)
-    a.save()
-    print(a)
