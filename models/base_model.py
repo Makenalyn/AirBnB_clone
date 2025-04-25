@@ -17,6 +17,10 @@ class BaseModel:
         if kwargs:
             for key, value in kwargs.items():
                 key['created_at'] = self.created_at
+                key['updated_at'] = self.updated_at
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
 
     """ prints the class name, id and the dictionary of the instance """
     def __str__(self):
