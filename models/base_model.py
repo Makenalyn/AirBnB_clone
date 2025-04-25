@@ -16,8 +16,8 @@ class BaseModel:
 
         if kwargs:
             for key, value in kwargs.items():
-                key['created_at'] = str(self.created_at)
-                key['updated_at'] = str(self.updated_at)
+                key['created_at'] = datetime.fromisoformat(created_at)
+                key['updated_at'] = datetime.fromisoformat(updated_at)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
