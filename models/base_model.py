@@ -2,7 +2,6 @@
 import uuid
 import datetime
 from datetime import datetime
-import storage
 """ A baseModel class which is the base of all other classes"""
 
 
@@ -16,11 +15,11 @@ class BaseModel:
 
         if kwargs:
             for key, value in kwargs.items():
-                key['created_at'] = datetime.fromisoformat(str(self.created_at))
-                key['updated_at'] = datetime.fromisoformat(str(self.updated_at))
+                if key == "created_at":
+                    self.created_at = datetime.fromisoformat(value)
+                if key == "updated_at":
+                    self.updated_at = datetime.fromisoformat(value)
 
-            if not isinstance(BaseModel.__dict__):
-                storage.new()
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
@@ -32,7 +31,6 @@ class BaseModel:
     """ updates the public instance updated_at with the current datetime """
     def save(self):
         self.updated_at = datetime.now()
-        storage.reload()
 
     """ return the dictionary copy of the class instance """
     def to_dict(self):
