@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import uuid
+from models.engine import file_storage
+from file_storage import FileStorage
 import datetime
 from datetime import datetime
 """ A baseModel class which is the base of all other classes"""
